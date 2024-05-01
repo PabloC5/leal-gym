@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/loginFragment2">
+    app:startDestination="@id/splashFragment2">
 
     <fragment
         android:id="@+id/loginFragment2"
@@ -27,4 +27,13 @@
         android:name="com.example.lealgym.ui.auth.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/splashFragment2"
+        android:name="com.example.lealgym.ui.SplashFragment2"
+        android:label="fragment_splash2"
+        tools:layout="@layout/fragment_splash2" >
+        <action
+            android:id="@+id/action_splashFragment2_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
 </navigation>
