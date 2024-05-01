@@ -24,7 +24,6 @@ class SplashFragment2 : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         Handler(Looper.getMainLooper()).postDelayed(this::checkLogin, 3000)
     }
 
