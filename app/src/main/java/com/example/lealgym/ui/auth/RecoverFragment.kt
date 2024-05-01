@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.lealgym.R
 import com.example.lealgym.databinding.FragmentLoginBinding
 import com.example.lealgym.databinding.FragmentRecoverBinding
+import com.example.lealgym.helper.FirebaseHelper
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -60,6 +61,11 @@ class RecoverFragment : Fragment() {
                     Toast.makeText(requireContext(),
                         "Link de recuperação de senha enviado no email",
                         Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(requireContext(),
+                        FirebaseHelper.validError(task.exception?.message!!),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
                 binding.progressBar.isVisible = false
             }
