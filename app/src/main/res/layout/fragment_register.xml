@@ -51,12 +51,14 @@
                 android:textColor="@color/white" />
 
             <EditText
+                android:id="@+id/idEmailRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_edit"
-                android:hint="pablo@gmail.com"
+                android:hint="email@gmail.com"
                 android:padding="14dp"
+                android:inputType="textEmailAddress"
                 android:textSize="14sp" />
 
             <TextView
@@ -67,15 +69,18 @@
                 android:textColor="@color/white" />
 
             <EditText
+                android:id="@+id/idPasswordRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_edit"
                 android:hint="****"
+                android:inputType="textPassword"
                 android:padding="14dp"
                 android:textSize="14sp" />
 
             <Button
+                android:id="@+id/buttonRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -84,6 +89,16 @@
                 android:textAllCaps="false"
                 android:textColor="@color/color_defauls"
                 app:backgroundTint="@null" />
+
+            <ProgressBar
+                android:id="@+id/progressBarRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                android:indeterminateTint="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"/>
 
         </LinearLayout>
 
