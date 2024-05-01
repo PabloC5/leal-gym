@@ -55,12 +55,13 @@ class RegisterFragment : Fragment() {
     }
 
     fun register(email: String, password: String) {
-        auth.signInWithEmailAndPassword(email, password)
+        auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     findNavController().navigate(R.id.action_registerFragment2_to_homeFragment)
                 } else {
                     binding.progressBarRegister.isVisible = false
+                    println(task.exception)
                 }
             }
     }
