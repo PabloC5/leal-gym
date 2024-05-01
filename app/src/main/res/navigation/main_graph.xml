@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment2">
+
+    <fragment
+        android:id="@+id/loginFragment2"
+        android:name="com.example.lealgym.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment2_to_recoverFragment2"
+            app:destination="@id/recoverFragment2" />
+        <action
+            android:id="@+id/action_loginFragment2_to_registerFragment2"
+            app:destination="@id/registerFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoverFragment2"
+        android:name="com.example.lealgym.ui.auth.RecoverFragment"
+        android:label="fragment_recover"
+        tools:layout="@layout/fragment_recover" />
+    <fragment
+        android:id="@+id/registerFragment2"
+        android:name="com.example.lealgym.ui.auth.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/splashFragment2"
+        android:name="com.example.lealgym.ui.SplashFragment2"
+        android:label="fragment_splash2"
+        tools:layout="@layout/fragment_splash2" >
+        <action
+            android:id="@+id/action_splashFragment2_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
+</navigation>
