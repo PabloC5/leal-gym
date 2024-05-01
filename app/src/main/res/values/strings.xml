@@ -7,6 +7,8 @@
     <string name="text_register">Criar conta</string>
     <string name="text_recover">Recuperar conta</string>
     <string name="text_btn_login">Login</string>
+    <string name="text_title_form">Novo treino</string>
+    <string name="text_btn_treino">Salvar treino</string>
 
     <string name="account_not_registered_register">Senha ou email invalido!</string>
     <string name="invalid_email_register">Insira um e-mail válido.</string>
