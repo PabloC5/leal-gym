@@ -22,15 +22,17 @@
             android:text="E-mail"
             android:textColor="@color/white"
             />
+
         <EditText
+            android:id="@+id/emailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_edit"
             android:layout_marginTop="8dp"
-            android:textSize="14sp"
+            android:background="@drawable/bg_edit"
+            android:hint="email@gmail.com"
+            android:inputType="textEmailAddress"
             android:padding="14dp"
-            android:hint="pablo@gmail.com"
-            />
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -39,17 +41,20 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/white"
             />
+
         <EditText
+            android:id="@+id/passworLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_edit"
             android:layout_marginTop="8dp"
-            android:textSize="14sp"
+            android:background="@drawable/bg_edit"
             android:hint="****"
+            android:inputType="textPassword"
             android:padding="14dp"
-            />
+            android:textSize="14sp" />
 
         <Button
+            android:id="@+id/buttonLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
@@ -92,7 +97,18 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.533" />
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:indeterminateTint="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"/>
+
     </LinearLayout>
 
 </ScrollView>

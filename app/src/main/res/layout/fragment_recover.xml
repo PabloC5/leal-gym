@@ -50,16 +50,19 @@
                 android:textColor="@color/white" />
 
             <EditText
+                android:id="@+id/emailRecover"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_edit"
-                android:hint="pablo@gmail.com"
+                android:hint="email@gmail.com"
+                android:inputType="textEmailAddress"
                 android:padding="14dp"
                 android:textSize="14sp" />
 
 
             <Button
+                android:id="@+id/btRecover"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -69,7 +72,18 @@
                 android:textColor="@color/color_defauls"
                 app:backgroundTint="@null" />
 
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                android:indeterminateTint="@color/white"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"/>
+
         </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
