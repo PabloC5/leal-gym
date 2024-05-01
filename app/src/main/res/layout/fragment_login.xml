@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="E-mail"
+            android:text="@string/text_email"
             android:textColor="@color/white"
             />
 
@@ -37,7 +37,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Senha"
+            android:text="@string/text_password"
             android:layout_marginTop="16dp"
             android:textColor="@color/white"
             />
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button"
-            android:text="Login"
+            android:text="@string/text_btn_login"
             app:backgroundTint="@null"
             android:layout_marginTop="16dp"
             android:textAllCaps="false"
@@ -74,9 +74,9 @@
                 android:id="@+id/buttonRecover"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="240dp"
+                android:layout_marginStart="216dp"
                 android:padding="8dp"
-                android:text="Recuperar senha"
+                android:text="@string/text_recover"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -88,14 +88,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:layout_marginEnd="276dp"
+                android:layout_marginEnd="252dp"
                 android:padding="8dp"
-                android:text="Criar conta"
+                android:text="@string/text_register"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.533" />
+                app:layout_constraintVertical_bias="0.466" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

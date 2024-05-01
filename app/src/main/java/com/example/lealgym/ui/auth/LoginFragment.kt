@@ -52,7 +52,7 @@ class LoginFragment : Fragment() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    findNavController().navigate(R.id.action_loginFragment2_to_homeFragment)
+                    findNavController().navigate(R.id.action_global_homeFragment)
                 } else {
                     binding.progressBar.isVisible = false
                     println(task.exception)
@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun clickBtn() {
-        binding.buttonRegister.setOnClickListener {
+        binding.buttonLogin.setOnClickListener {
             validateData()
         }
 //        controla a navegação dos botões da tela de login
