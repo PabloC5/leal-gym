@@ -1,6 +1,7 @@
 package com.example.lealgym.ui
 
 import android.app.DatePickerDialog
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,9 +12,12 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.lealgym.R
 import com.example.lealgym.databinding.FragmentFormTreinoBinding
 import com.example.lealgym.helper.FirebaseHelper
+import com.example.lealgym.model.Exercicio
+import com.example.lealgym.model.Treino
 import java.text.DateFormat
 import java.util.Calendar
 import java.util.Date
@@ -25,6 +29,8 @@ class FormTreinoFragment : Fragment() {
     private var _binding: FragmentFormTreinoBinding? = null
     private val binding get() = _binding!!
     private lateinit var editTextDate: EditText
+    private lateinit var treino: Treino
+    private var novoTreino: Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,16 +63,7 @@ class FormTreinoFragment : Fragment() {
         datePickerDialog.show()
     }
 
-    fun registerTreino(nome: String,
-                       descricao: String, date: Date) {
-
-        val data = hashMapOf(
-            "nome" to nome,
-            "idUser" to FirebaseHelper.getIdUser(),
-            "descricao" to descricao,
-            "date" to date,
-        )
-
+    fun registerTreino(data: Treino) {
         FirebaseHelper.getDatabase().collection("Treino").add(data)
             .addOnSuccessListener {
                 Log.d("dbinfolog", "DocumentSnapshot successfully written!")
@@ -74,7 +71,7 @@ class FormTreinoFragment : Fragment() {
                 binding.editText.text = null
                 binding.editText2.text = null
                 binding.editTextDate.text = null
-
+                findNavController().popBackStack()
                 Toast.makeText(requireContext(),
                     "Treino salvo com sucesso!!",
                     Toast.LENGTH_SHORT).show()
@@ -93,13 +90,19 @@ class FormTreinoFragment : Fragment() {
         val descricao = binding.editText2.text.toString().trim()
         val date = binding.editTextDate.text.toString().trim()
         val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-        var teste = dateFormat.parse(date)
+        val dateFinal = dateFormat.parse(date)
         if (nome.isNotEmpty() && descricao.isNotEmpty() && date.isNotEmpty()) {
             binding.progressBar.isVisible = true
-            registerTreino(nome, descricao, teste!!)
+            if (novoTreino) treino = Treino()
+            treino.nome = nome
+            treino.descricao = descricao
+            treino.date = dateFinal
+            treino.id_user = FirebaseHelper.getIdUser()!!
+
+            registerTreino(treino)
         } else {
             Toast.makeText(requireContext(),
-                "Email ou Senha não informados", Toast.LENGTH_SHORT).show()
+                "Não foi possivel salvar", Toast.LENGTH_SHORT).show()
         }
     }
 

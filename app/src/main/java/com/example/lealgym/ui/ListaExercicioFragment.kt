@@ -5,19 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.navigation.fragment.findNavController
 import com.example.lealgym.R
-import com.example.lealgym.databinding.FragmentTodoBinding
+import com.example.lealgym.databinding.FragmentFormTreinoBinding
+import com.example.lealgym.databinding.FragmentListaExercicioBinding
 
-class TodoFragment : Fragment() {
-    private var _binding: FragmentTodoBinding? = null
+class ListaExercicioFragment : Fragment() {
+    private var _binding: FragmentListaExercicioBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentTodoBinding.inflate(inflater, container, false)
+        _binding = FragmentListaExercicioBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -27,9 +29,8 @@ class TodoFragment : Fragment() {
     }
 
     fun clickAdd() {
-        binding.btnAddTreino.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_exercicioFragment)
-//            findNavController().navigate(R.id.action_homeFragment_to_formTreinoFragment)
+        binding.btnAddEx.setOnClickListener {
+            findNavController().navigate(R.id.action_listaExercicioFragment_to_exercicioFragment)
         }
     }
 
@@ -37,4 +38,6 @@ class TodoFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+
+
 }

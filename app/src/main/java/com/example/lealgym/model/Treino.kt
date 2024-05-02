@@ -1,11 +1,11 @@
 package com.example.lealgym.model
 
-import java.sql.Timestamp
+import java.util.Date
 
 data class Treino(
     var nome: String = "",
     var id_user: String = "",
     var descricao: String = "",
-    var date: Timestamp? = null,
+    var date: Date? = null,
     var exercicio: Exercicio? = null
 )

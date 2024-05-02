@@ -37,9 +37,6 @@
         <action
             android:id="@+id/action_homeFragment_to_formTreinoFragment"
             app:destination="@id/formTreinoFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_exercicioFragment"
-            app:destination="@id/exercicioFragment" />
     </fragment>
     <navigation android:id="@+id/navigation2"
         app:startDestination="@id/loginFragment2">
@@ -82,4 +79,13 @@
         android:name="com.example.lealgym.ui.ExercicioFragment"
         android:label="fragment_exercicio"
         tools:layout="@layout/fragment_exercicio" />
+    <fragment
+        android:id="@+id/listaExercicioFragment"
+        android:name="com.example.lealgym.ui.ListaExercicioFragment"
+        android:label="fragment_lista_exercicio"
+        tools:layout="@layout/fragment_lista_exercicio" >
+        <action
+            android:id="@+id/action_listaExercicioFragment_to_exercicioFragment"
+            app:destination="@id/exercicioFragment" />
+    </fragment>
 </navigation>
