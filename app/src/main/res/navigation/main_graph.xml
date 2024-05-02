@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/splashFragment2">
+
+    <fragment
+        android:id="@+id/splashFragment2"
+        android:name="com.example.lealgym.ui.SplashFragment2"
+        android:label="fragment_splash2"
+        tools:layout="@layout/fragment_splash2" >
+        <action
+            android:id="@+id/action_splashFragment2_to_navigation2"
+            app:destination="@id/navigation2"
+            app:popUpTo="@id/splashFragment2"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_splashFragment2_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment2"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.lealgym.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_navigation2"
+            app:destination="@id/navigation2"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_formTreinoFragment"
+            app:destination="@id/formTreinoFragment" />
+    </fragment>
+    <navigation android:id="@+id/navigation2"
+        app:startDestination="@id/loginFragment2">
+        <fragment
+            android:id="@+id/recoverFragment2"
+            android:name="com.example.lealgym.ui.auth.RecoverFragment"
+            android:label="fragment_recover"
+            tools:layout="@layout/fragment_recover" />
+        <fragment
+            android:id="@+id/registerFragment2"
+            android:name="com.example.lealgym.ui.auth.RegisterFragment"
+            android:label="fragment_register"
+            tools:layout="@layout/fragment_register" />
+        <fragment
+            android:id="@+id/loginFragment2"
+            android:name="com.example.lealgym.ui.auth.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login" >
+            <action
+                android:id="@+id/action_loginFragment2_to_registerFragment2"
+                app:destination="@id/registerFragment2" />
+            <action
+                android:id="@+id/action_loginFragment2_to_recoverFragment2"
+                app:destination="@id/recoverFragment2" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/loginFragment2"
+            app:popUpToInclusive="true"
+            />
+    </navigation>
+    <fragment
+        android:id="@+id/formTreinoFragment"
+        android:name="com.example.lealgym.ui.FormTreinoFragment"
+        android:label="fragment_form_treino"
+        tools:layout="@layout/fragment_form_treino" />
+    <fragment
+        android:id="@+id/exercicioFragment"
+        android:name="com.example.lealgym.ui.ExercicioFragment"
+        android:label="fragment_exercicio"
+        tools:layout="@layout/fragment_exercicio" />
+    <fragment
+        android:id="@+id/listaExercicioFragment"
+        android:name="com.example.lealgym.ui.ListaExercicioFragment"
+        android:label="fragment_lista_exercicio"
+        tools:layout="@layout/fragment_lista_exercicio" >
+        <action
+            android:id="@+id/action_listaExercicioFragment_to_exercicioFragment"
+            app:destination="@id/exercicioFragment" />
+    </fragment>
+</navigation>

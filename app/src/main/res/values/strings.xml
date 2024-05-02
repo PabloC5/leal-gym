@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Leal Gym</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="text_email">E-mail</string>
+    <string name="text_password">Senha</string>
+    <string name="text_register">Criar conta</string>
+    <string name="text_recover">Recuperar conta</string>
+    <string name="text_btn_login">Login</string>
+    <string name="text_title_form">Novo treino</string>
+    <string name="text_title_form_ex">Novo exercicio</string>
+    <string name="text_btn_treino">Salvar treino</string>
+    <string name="text_btn_ex">Salvar Exercicio</string>
+
+
+    <string name="account_not_registered_register">Senha ou email invalido!</string>
+    <string name="invalid_email_register">Insira um e-mail válido.</string>
+    <string name="invalid_password_register">Senha inválida</string>
+    <string name="email_in_use_register">Este e-mail já está em uso.</string>
+    <string name="strong_password_register">Senha muito fraca deve conter no mínimo 6 caracteres.</string>
+    <string name="erro_generic">Ocorreu um erro, tente novamente!!</string>
 </resources>
