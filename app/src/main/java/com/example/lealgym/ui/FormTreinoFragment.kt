@@ -1,16 +1,25 @@
 package com.example.lealgym.ui
 
+import android.app.DatePickerDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.lealgym.R
-import com.example.lealgym.databinding.FragmentFormTreinoBinding
-import java.util.Calendar
-import android.app.DatePickerDialog
 import android.widget.DatePicker
 import android.widget.EditText
+import android.widget.Toast
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import com.example.lealgym.R
+import com.example.lealgym.databinding.FragmentFormTreinoBinding
+import com.example.lealgym.helper.FirebaseHelper
+import java.text.DateFormat
+import java.util.Calendar
+import java.util.Date
+import com.google.firebase.Timestamp
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class FormTreinoFragment : Fragment() {
     private var _binding: FragmentFormTreinoBinding? = null
@@ -29,6 +38,7 @@ class FormTreinoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         editTextDate = view.findViewById(R.id.editTextDate)
         editTextDate.setOnClickListener { openDatePicker() }
+        click()
     }
     private fun openDatePicker() {
         val calendar = Calendar.getInstance()
@@ -47,6 +57,44 @@ class FormTreinoFragment : Fragment() {
         )
         datePickerDialog.show()
     }
+
+    fun registerTreino(nome: String,
+                       descricao: String, date: Date) {
+
+        val data = hashMapOf(
+            "nome" to nome,
+            "idUser" to FirebaseHelper.getIdUser(),
+            "descricao" to descricao,
+            "date" to date,
+        )
+
+        FirebaseHelper.getDatabase().collection("LealGym").add(data)
+            .addOnSuccessListener { Log.d("dbinfolog", "DocumentSnapshot successfully written!") }
+            .addOnFailureListener { e -> Log.w("dbinfolog", "Error writing document", e) }
+    }
+
+    fun click() {
+        binding.buttonTreino.setOnClickListener {
+            validateData()
+        }
+    }
+
+    fun validateData() {
+        val nome = binding.editText.text.toString().trim()
+        val idUser = binding.editText.text.toString().trim()
+        val descricao = binding.editText2.text.toString().trim()
+        val date = binding.editTextDate.text.toString().trim()
+        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+        var teste = dateFormat.parse(date)
+        if (nome.isNotEmpty() && descricao.isNotEmpty() && date.isNotEmpty()) {
+            binding.progressBar.isVisible = true
+            registerTreino(nome, descricao, teste!!)
+        } else {
+            Toast.makeText(requireContext(),
+                "Email ou Senha não informados", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()

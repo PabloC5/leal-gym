@@ -3,6 +3,7 @@ package com.example.lealgym.helper
 import com.example.lealgym.R
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
 
 class FirebaseHelper {

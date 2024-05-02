@@ -3,8 +3,9 @@ package com.example.lealgym.model
 import java.sql.Timestamp
 
 data class Treino(
-    var nome: Number = 0,
+    var nome: String = "",
+    var id_user: String = "",
     var descricao: String = "",
-    var data: Timestamp? = null,
-    var exercicio: Exercio = null
+    var date: Timestamp? = null,
+    var exercicio: Exercicio? = null
 )

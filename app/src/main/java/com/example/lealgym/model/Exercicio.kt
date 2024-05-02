@@ -1,5 +1,9 @@
 package com.example.lealgym.model
 
-data class Exercicio(
+import kotlinx.parcelize.Parcelize
 
+data class Exercicio(
+    var nome: String = "",
+    var imagem: String = "",
+    var observacao: String = ""
 )
