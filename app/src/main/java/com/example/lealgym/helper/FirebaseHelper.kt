@@ -3,7 +3,9 @@ package com.example.lealgym.helper
 import com.example.lealgym.R
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.firestore
+import com.google.firebase.storage.storage
 
 class FirebaseHelper {
     companion object {
@@ -13,6 +15,8 @@ class FirebaseHelper {
         fun getIdUser() = getAuth().uid
 
         fun getAutenticate() = getAuth().currentUser != null
+
+        fun getStorageFire() = Firebase.storage
 
         fun validError(error: String): Int {
             return  when {

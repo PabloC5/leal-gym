@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.lealgym.R
 import com.example.lealgym.databinding.FragmentHomeBinding
-import com.example.lealgym.databinding.FragmentRecoverBinding
 import com.example.lealgym.ui.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.Firebase
@@ -39,10 +38,7 @@ class HomeFragment : Fragment() {
         val adapter = ViewPagerAdapter(requireActivity())
         binding.viewPage.adapter = adapter
 
-        adapter.addFragment(TodoFragment(), "A fazer")
-        adapter.addFragment(DoingFragment(), "Fazendo")
-        adapter.addFragment(DoneFragment(), "Feitas")
-
+        adapter.addFragment(TreinoFragment(), "Treino")
         binding.viewPage.offscreenPageLimit = adapter.itemCount
 
         TabLayoutMediator(

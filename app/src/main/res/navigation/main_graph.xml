@@ -74,4 +74,18 @@
         android:name="com.example.lealgym.ui.FormTreinoFragment"
         android:label="fragment_form_treino"
         tools:layout="@layout/fragment_form_treino" />
+    <fragment
+        android:id="@+id/exercicioFragment"
+        android:name="com.example.lealgym.ui.ExercicioFragment"
+        android:label="fragment_exercicio"
+        tools:layout="@layout/fragment_exercicio" />
+    <fragment
+        android:id="@+id/listaExercicioFragment"
+        android:name="com.example.lealgym.ui.ListaExercicioFragment"
+        android:label="fragment_lista_exercicio"
+        tools:layout="@layout/fragment_lista_exercicio" >
+        <action
+            android:id="@+id/action_listaExercicioFragment_to_exercicioFragment"
+            app:destination="@id/exercicioFragment" />
+    </fragment>
 </navigation>

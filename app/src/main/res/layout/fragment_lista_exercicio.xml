@@ -4,10 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.DoingFragment">
+    tools:context=".ui.ListaExercicioFragment">
+
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recvTreino"
+        android:id="@+id/recvEx"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -24,7 +25,7 @@
         android:layout_marginHorizontal="32dp"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/recvTreino">
+        app:layout_constraintTop_toTopOf="@+id/recvEx">
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -33,15 +34,30 @@
             android:indeterminateTint="@color/white" />
 
         <TextView
-            android:id="@+id/textInfo"
+            android:id="@+id/textInfoEx"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Carregando treinos..."
+            android:text="Carregando exercicios..."
             android:textColor="@color/white"
             android:textAlignment="center" />
 
 
     </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddEx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:tint="@color/color_defauls"
+        android:src="@drawable/baseline_add_24"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

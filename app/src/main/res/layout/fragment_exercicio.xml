@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.FormTreinoFragment">
+    tools:context=".ui.ExercicioFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="@string/text_title_form"
+                android:text="@string/text_title_form_ex"
                 android:textColor="@color/white" />
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
@@ -57,14 +57,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_edit"
                 android:padding="14dp"
                 android:inputType="text"
-                android:hint="Digite o numero do seu treino"
+                android:hint="Digite o nome do seu exercicio"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -74,20 +74,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Descrição"
+                android:text="Observação"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextName" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/editTextObs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/bg_edit"
                 android:inputType="text"
                 android:padding="14dp"
-                android:hint="Descrição do seu treino"
+                android:hint="Observação do treino"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -98,21 +98,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Data"
+                android:text="Imagem"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText2" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextObs" />
 
-            <EditText
-                android:id="@+id/editTextDate"
+            <Button
+                android:id="@+id/selectImage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/bg_edit"
                 android:padding="14dp"
-                android:hint="Selecione a data"
-                android:focusable="false"
-                android:clickable="true"
+                android:backgroundTint="@color/white"
+                android:hint="url imagem"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -123,13 +121,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/bg_button"
-                android:text="@string/text_btn_treino"
+                android:text="@string/text_btn_ex"
                 android:textAllCaps="false"
                 android:textColor="@color/color_defauls"
                 app:backgroundTint="@null"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+                app:layout_constraintTop_toBottomOf="@+id/selectImage" />
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -147,7 +145,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
 
 
 
