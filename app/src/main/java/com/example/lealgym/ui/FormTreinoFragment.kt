@@ -49,7 +49,6 @@ class FormTreinoFragment : Fragment() {
         val datePickerDialog = DatePickerDialog(
             requireContext(),
             { _: DatePicker, selectedYear: Int, selectedMonth: Int, selectedDay: Int ->
-                // Do something with the selected date
                 val selectedDate = "$selectedDay/${selectedMonth + 1}/$selectedYear"
                 editTextDate.setText(selectedDate)
             },
@@ -68,8 +67,18 @@ class FormTreinoFragment : Fragment() {
             "date" to date,
         )
 
-        FirebaseHelper.getDatabase().collection("LealGym").add(data)
-            .addOnSuccessListener { Log.d("dbinfolog", "DocumentSnapshot successfully written!") }
+        FirebaseHelper.getDatabase().collection("Treino").add(data)
+            .addOnSuccessListener {
+                Log.d("dbinfolog", "DocumentSnapshot successfully written!")
+                binding.progressBar.isVisible = false
+                binding.editText.text = null
+                binding.editText2.text = null
+                binding.editTextDate.text = null
+
+                Toast.makeText(requireContext(),
+                    "Treino salvo com sucesso!!",
+                    Toast.LENGTH_SHORT).show()
+            }
             .addOnFailureListener { e -> Log.w("dbinfolog", "Error writing document", e) }
     }
 
@@ -81,7 +90,6 @@ class FormTreinoFragment : Fragment() {
 
     fun validateData() {
         val nome = binding.editText.text.toString().trim()
-        val idUser = binding.editText.text.toString().trim()
         val descricao = binding.editText2.text.toString().trim()
         val date = binding.editTextDate.text.toString().trim()
         val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())

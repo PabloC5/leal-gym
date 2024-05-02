@@ -28,7 +28,8 @@ class TodoFragment : Fragment() {
 
     fun clickAdd() {
         binding.btnAddTreino.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_formTreinoFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_exercicioFragment)
+//            findNavController().navigate(R.id.action_homeFragment_to_formTreinoFragment)
         }
     }
 
