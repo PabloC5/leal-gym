@@ -31,4 +31,5 @@ Para executar este projeto localmente, siga estas etapas:
 1. Clone este repositório em sua máquina local.
 2. Abra o projeto em seu ambiente de desenvolvimento Android Studio.
 3. Aguarde o Android Studio sincronizar e baixar as dependências do projeto.
-4. Execute o aplicativo em um dispositivo Android ou em um emulador.
+4. Gerar as credenciais do google, ou o google-service.json criando um projeto no firebase
+5. Execute o aplicativo em um dispositivo Android ou em um emulador.
